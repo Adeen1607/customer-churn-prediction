@@ -1,0 +1,15 @@
+{
+  "repository": "Adeen1607/customer-churn-prediction",
+  "review_date": "2026-10-11",
+  "evidence_note": "Fresh execution on 11 October 2026 using the committed pipeline and seed 42. Validation selected **random_forest**. On **570** held-out records, precision was **85.9%**, recall **88.8%** and average precision **0.9198**. The test set contained **10** missed positives and **13** false alerts. These are retrospective sample results.\n\n| Measure | Value |\n|---|---:|\n| average precision | 0.9198 |\n| roc auc | 0.9848 |\n| precision | 0.8587 |\n| recall | 0.8876 |\n| f1 | 0.8729 |\n| true negatives | 468 |\n| false positives | 13 |\n| false negatives | 10 |\n| true positives | 79 |\n| selected model | random_forest |\n| decision threshold | 0.5795 |\n| validation precision at threshold | 0.8375 |\n| validation recall at threshold | 0.7528 |\n| validation average precision | 0.8589 |\n| churn prevalence | 0.1565 |\n| train rows | 1710 |\n| validation rows | 570 |\n| test rows | 570 |\n| random seed | 42 |\n\n",
+  "inputs": [
+    {
+      "path": "notebooks/key_visuals.ipynb",
+      "sha256": "228ea51ef52f5ed9a6bbc760378781399a55640f370c1d432f6a5cd535a1af3e"
+    },
+    {
+      "path": "reports/results/metrics.json",
+      "sha256": "13cfe7e458dc106828be513b3659488d6cf747a3d2080779091d4a57e6c7b5b2"
+    }
+  ]
+}

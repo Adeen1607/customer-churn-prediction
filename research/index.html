@@ -1,0 +1,87 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Telecom Churn Classification</title><link rel="stylesheet" href="style.css"></head><body><header><div><p class="meta">Mohammed Adeen Shaik · Research and coursework</p><h1>Telecom Churn Classification</h1><nav><a href="index.html">Overview</a><a href="report.html">Research report</a><a href="notebooks.html">Explained notebooks</a><a href="https://github.com/Adeen1607/customer-churn-prediction">Source repository</a></nav></div></header><main><h2>The study</h2><p>Can a baseline model rank churn risk while meeting a validation recall requirement?</p><p>UCI Iranian Churn dataset.</p><h2>What the evidence shows</h2><p>Fresh execution on 11 October 2026 using the committed pipeline and seed 42. Validation selected <strong>random_forest</strong>. On <strong>570</strong> held-out records, precision was <strong>85.9%</strong>, recall <strong>88.8%</strong> and average precision <strong>0.9198</strong>. The test set contained <strong>10</strong> missed positives and <strong>13</strong> false alerts. These are retrospective sample results.</p>
+<table>
+<thead>
+<tr>
+<th>Measure</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>average precision</td>
+<td style="text-align: right;">0.9198</td>
+</tr>
+<tr>
+<td>roc auc</td>
+<td style="text-align: right;">0.9848</td>
+</tr>
+<tr>
+<td>precision</td>
+<td style="text-align: right;">0.8587</td>
+</tr>
+<tr>
+<td>recall</td>
+<td style="text-align: right;">0.8876</td>
+</tr>
+<tr>
+<td>f1</td>
+<td style="text-align: right;">0.8729</td>
+</tr>
+<tr>
+<td>true negatives</td>
+<td style="text-align: right;">468</td>
+</tr>
+<tr>
+<td>false positives</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td>false negatives</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td>true positives</td>
+<td style="text-align: right;">79</td>
+</tr>
+<tr>
+<td>selected model</td>
+<td style="text-align: right;">random_forest</td>
+</tr>
+<tr>
+<td>decision threshold</td>
+<td style="text-align: right;">0.5795</td>
+</tr>
+<tr>
+<td>validation precision at threshold</td>
+<td style="text-align: right;">0.8375</td>
+</tr>
+<tr>
+<td>validation recall at threshold</td>
+<td style="text-align: right;">0.7528</td>
+</tr>
+<tr>
+<td>validation average precision</td>
+<td style="text-align: right;">0.8589</td>
+</tr>
+<tr>
+<td>churn prevalence</td>
+<td style="text-align: right;">0.1565</td>
+</tr>
+<tr>
+<td>train rows</td>
+<td style="text-align: right;">1710</td>
+</tr>
+<tr>
+<td>validation rows</td>
+<td style="text-align: right;">570</td>
+</tr>
+<tr>
+<td>test rows</td>
+<td style="text-align: right;">570</td>
+</tr>
+<tr>
+<td>random seed</td>
+<td style="text-align: right;">42</td>
+</tr>
+</tbody>
+</table><h2>Read the work</h2><p><a href="report.html">Research report and final result figures</a> · <a href="notebooks.html">Explained notebooks</a></p><h2>Interpretation</h2><p>A validation recall constraint does not guarantee test or future recall. Random partitions do not demonstrate future-period generalization. Retention effectiveness requires an intervention study.</p><footer>Evidence dates and limitations are documented in the report. Static pages display saved outputs; they do not execute Python, R, Streamlit or API calls.</footer></main></body></html>

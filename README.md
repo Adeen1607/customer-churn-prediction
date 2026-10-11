@@ -43,3 +43,49 @@ pytest
 ## Responsible use
 
 The sample comes from one telecom provider and one historical period. Churn interventions can affect customer experience and may not have equal benefit across groups. Deployment would require calibration, uplift testing, subgroup analysis, drift monitoring, contact-policy review, and human oversight.
+
+
+## Rebuild the reading edition
+
+```bash
+python -m pip install -r requirements-research.txt
+python scripts/build_research_site.py
+```
+
+This renders saved notebook outputs without rerunning model training or external APIs. To refresh findings, run the analysis commands above first, update `reports/research-findings.md`, and rebuild.
+
+
+<!-- research-edition:start -->
+## Research edition
+
+[Research report and final visual results](research/report.md) · [Browser-ready notebook catalogue](research/notebooks.html)
+
+Fresh execution on 11 October 2026 using the committed pipeline and seed 42. Validation selected **random_forest**. On **570** held-out records, precision was **85.9%**, recall **88.8%** and average precision **0.9198**. The test set contained **10** missed positives and **13** false alerts. These are retrospective sample results.
+
+| Measure | Value |
+|---|---:|
+| average precision | 0.9198 |
+| roc auc | 0.9848 |
+| precision | 0.8587 |
+| recall | 0.8876 |
+| f1 | 0.8729 |
+| true negatives | 468 |
+| false positives | 13 |
+| false negatives | 10 |
+| true positives | 79 |
+| selected model | random_forest |
+| decision threshold | 0.5795 |
+| validation precision at threshold | 0.8375 |
+| validation recall at threshold | 0.7528 |
+| validation average precision | 0.8589 |
+| churn prevalence | 0.1565 |
+| train rows | 1710 |
+| validation rows | 570 |
+| test rows | 570 |
+| random seed | 42 |
+
+
+
+The `research/` folder contains a professional static reading edition. The Pages workflow deploys it after GitHub Pages is enabled with **GitHub Actions** as the publishing source. Intended URL: `https://adeen1607.github.io/customer-churn-prediction/`. Deployment status must be checked in Actions before treating that address as live.
+
+<!-- research-edition:end -->
