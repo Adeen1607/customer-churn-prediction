@@ -87,6 +87,17 @@ def select_threshold(
     probabilities: pd.Series,
     minimum_recall: float,
 ) -> tuple[float, float, float]:
+    if not 0 < minimum_recall <= 1:
+        raise ValueError("minimum_recall must be greater than zero and at most one.")
+    if len(labels) != len(probabilities) or len(labels) == 0:
+        raise ValueError("Labels and probabilities must be nonempty and have equal lengths.")
+    if labels.isna().any() or not labels.isin([0, 1]).all():
+        raise ValueError("Labels must contain only binary values 0 and 1.")
+    if not labels.eq(1).any():
+        raise ValueError("At least one positive label is required for recall.")
+    if probabilities.isna().any() or not probabilities.between(0, 1).all():
+        raise ValueError("Probabilities must be finite values between 0 and 1.")
+
     precision, recall, thresholds = precision_recall_curve(labels, probabilities)
     candidates = pd.DataFrame(
         {
